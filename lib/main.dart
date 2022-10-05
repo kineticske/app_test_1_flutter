@@ -25,8 +25,28 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
-        body:
-            Center(child: Text("Hola mundo", style: TextStyle(fontSize: 12))));
+        appBar: AppBar(
+            title: Text('MiApp'),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.add),
+                onPressed: _add,
+              ),
+              IconButton(
+                icon: Icon(Icons.remove),
+                onPressed: _remove,
+              )
+            ],
+            shape: RoundedRectangleBorder()),
+        body: Center(
+            child: IconButton(
+                icon: Icon(Icons.close),
+                onPressed: () {
+                  print('Hola');
+                },
+                iconSize: 200)));
   }
+
+  void _add() {}
+  void _remove() {}
 }
